@@ -1,0 +1,17 @@
+app = "fly-ubuntu"
+
+primary_region = "sin" # ubah sesuai lokasi terdekat: sin=Singapore, hkg=Hong Kong, syd=Sydney, etc.
+
+[build]
+  image = "ubuntu:22.04"
+
+[[services]]
+  internal_port = 22
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = 22
+
+  [[services.tcp_checks]]
+    interval = "15s"
+    timeout = "2s"
